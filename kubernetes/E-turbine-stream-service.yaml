@@ -40,6 +40,9 @@ spec:
         project: piggymetrics
         trier: infrastructure
         app: turbine-stream-service
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '8686'        
     spec:
       containers:
       - env:
@@ -48,7 +51,7 @@ spec:
             secretKeyRef:
               name: piggymetrics
               key: config_service_password
-        image: afermon/piggymetrics-turbine-stream-service
+        image: prasenforu/pig-turbine:v1
         name: turbine-stream-service
         ports:
         - containerPort: 8989

@@ -37,6 +37,9 @@ spec:
         project: piggymetrics
         tier: infrastructure
         app: config
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '8686'        
     spec:
       containers:
       - env:
@@ -45,7 +48,7 @@ spec:
             secretKeyRef:
               name: piggymetrics
               key: config_service_password
-        image: afermon/piggymetrics-config
+        image: prasenforu/pig-config:v1
         name: config
         ports:
         - containerPort: 8888

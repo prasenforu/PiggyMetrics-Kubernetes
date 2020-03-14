@@ -18,7 +18,7 @@ spec:
     port: 80
     targetPort: 4000
     # comment or delete the following line if you want to use a LoadBalancer
-    nodePort: 30080
+    nodePort: 31080
   selector:
     project: piggymetrics
     tier: frontend
@@ -43,6 +43,9 @@ spec:
         project: piggymetrics
         tier: frontend
         app: gateway
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '8686'        
     spec:
       containers:
       - name: gateway
@@ -52,7 +55,7 @@ spec:
             secretKeyRef:
               name: piggymetrics
               key: config_service_password
-        image: afermon/piggymetrics-gateway
+        image: prasenforu/pig-gateway:v1
         
         ports:
         - containerPort: 4000

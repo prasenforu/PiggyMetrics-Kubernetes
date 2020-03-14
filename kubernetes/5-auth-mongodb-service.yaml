@@ -37,7 +37,7 @@ spec:
         app: auth-mongodb
     spec:
       containers:
-      - image: afermon/piggymetrics-mongodb
+      - image: prasenforu/pig-mongodb:v1
         name: auth-mongodb
         env:
           - name: MONGODB_PASSWORD

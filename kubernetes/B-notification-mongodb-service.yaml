@@ -45,7 +45,7 @@ spec:
               key: notification_mongodb_password
         ports:
           - containerPort: 27017
-        image: afermon/piggymetrics-mongodb
+        image: prasenforu/pig-mongodb:v1
         name: notification-mongodb
         resources: {}
       restartPolicy: Always

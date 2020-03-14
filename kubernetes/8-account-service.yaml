@@ -37,6 +37,9 @@ spec:
         project: piggymetrics
         tier: backend
         app: account-service
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '8686'        
     spec:
       containers:
       - env:
@@ -57,6 +60,6 @@ spec:
               key: account_mongodb_password
         ports:
           - containerPort: 6000
-        image: afermon/piggymetrics-account-service
+        image: prasenforu/pig-account:v1
         name: account-service
       restartPolicy: Always

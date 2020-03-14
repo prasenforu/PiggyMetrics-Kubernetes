@@ -42,7 +42,7 @@ spec:
         app: rabbitmq
     spec:
       containers:
-      - image: rabbitmq:3-management
+      - image: prasenforu/pig-rabbitmq:v1
         name: rabbitmq
         ports:
         - containerPort: 15672

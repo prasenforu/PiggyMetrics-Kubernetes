@@ -37,6 +37,9 @@ spec:
         project: piggymetrics
         tier: backend
         app: statistics-service
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '8686'        
     spec:
       containers:
       - env:
@@ -57,7 +60,7 @@ spec:
               key: statistics_service_password
         ports:
           - containerPort: 7000
-        image: afermon/piggymetrics-statistics-service
+        image: prasenforu/pig-statistics:v1
         name: statistics-service
         resources: {}
       restartPolicy: Always
